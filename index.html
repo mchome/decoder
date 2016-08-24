@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>decoder</title>
+    <link rel="shortcut icon" href="static/images/favicon.png">
+    <link rel="stylesheet" href="static/libs/mdl/material.min.css">
+    <link rel="stylesheet" href="static/libs/getmdl-select/getmdl-select.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--grey-100">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <h3>decoder</h3>
+            </div>
+        </header>
+
+        <main id="app" class="mdl-layout__content">
+            <div class="container mdl-shadow--2dp">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select selectbox">
+                    <input class="mdl-textfield__input" v-bind:value="encode" type="text" id="encode" readonly tabIndex="-1" data-val="{{ encode }}" v-model="encode" />
+                    <label class="mdl-textfield__label" for="encode">Encode</label>
+                    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="encode">
+                        <li class="mdl-menu__item" data-val="{{ e }}" v-for="e in codecs">{{ e }}</li>
+                    </ul>
+                    <div class="mdl-tooltip" data-mdl-for="encode">
+                        Choose a code for original text(ANSI perfer)
+                    </div>
+                </div>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield leftpanel">
+                <textarea class="mdl-textfield__input" id="textfield" v-model="text" spellcheck="false"></textarea>
+                <label class="mdl-textfield__label" for="textfield">Text lines...</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield rightpanel">
+                <textarea class="mdl-textfield__input" readonly>{{ result }}</textarea>
+            </div>
+        </main>
+    </div>
+    <script>
+        window.TextEncoder = window.TextDecoder = null;
+    </script>
+
+
+    <script src="static/libs/mdl/material.min.js"></script>
+    <script src="static/libs/getmdl-select/getmdl-select.min.js"></script>
+    <script src="static/libs/vue/vue.min.js"></script>
+    <!--<script src="static/libs/vue/vue.js"></script>-->
+    <script src="static/libs/jschardet/jschardet.min.js"></script>
+    <script src="static/libs/text-encoding/encoding-indexes.js"></script>
+    <script src="static/libs/text-encoding/encoding.js"></script>
+    <script src="static/js/app.js"></script>
+</body>
+
+</html>

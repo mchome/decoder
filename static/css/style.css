@@ -1,0 +1,37 @@
+#app .container {
+    height: 60px;
+}
+
+.selectbox {
+    left: 2%;
+}
+
+.leftpanel,
+.rightpanel {
+    display: inline-block;
+    width: 46%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.leftpanel {
+    margin-left: 20px;
+    margin-right: 15px;
+}
+
+.rightpanel {
+    margin-right: 20px;
+}
+
+.leftpanel textarea,
+.rightpanel textarea {
+    min-height: calc(100vh - 174px);
+    resize: none;
+    font-family: "Segoe UI", Roboto, Helvetica, "Microsoft YaHei", "mplus-1p-regular", Arial, sans-serif;
+}
+
+.rightpanel textarea {
+    border: none;
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+}
