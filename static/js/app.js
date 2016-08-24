@@ -3,7 +3,8 @@ new Vue({
     data: {
         text: '',
         codecs: ['gbk', 'big5', 'shift_jis'],
-        encode: 'gbk'
+        encode: 'gbk',
+        set_decode: ''
     },
     computed: {
         result: function() {
@@ -20,7 +21,8 @@ new Vue({
             }
             let arr = Array.from(this.encodedtext);
             let decode = jschardet.detect(this.array2hex(arr)).encoding;
-            if (decode === null) {
+            if (this.set_decode) { decode = this.set_decode; }
+            if (!decode) {
                 return decode
             }
             return decode.toLowerCase()
@@ -46,3 +48,7 @@ new Vue({
         }
     }
 })
+
+try {
+    getmdlSelect.init('.mdl-tooltip');
+} catch (error) {}

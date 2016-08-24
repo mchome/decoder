@@ -2,8 +2,12 @@
     height: 60px;
 }
 
-.selectbox {
+.selectbox1 {
     left: 2%;
+}
+
+.selectbox2 {
+    left: 42%;
 }
 
 .leftpanel,
