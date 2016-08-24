@@ -46,10 +46,3 @@ new Vue({
         }
     }
 })
-
-// var test = 'D.C.III R 乣僟丒僇乕億III 傾乕儖乣_pv';
-// var test1 = new TextEncoder('gbk', { NONSTANDARD_allowLegacyEncoding: true }).encode(test);
-// var test2 = new TextDecoder('shift_jis').decode(test1);
-// var test3 = array2hex(Array.from(test1));
-// console.log(jschardet.detect(test3).encoding);
-// console.log(test2);
