@@ -14,7 +14,6 @@
 .rightpanel {
     display: inline-block;
     width: 46%;
-    height: 100%;
     vertical-align: top;
 }
 
@@ -38,4 +37,12 @@
     border: none;
     padding-left: 20px;
     border-left: 1px solid #ccc;
+}
+
+.popup {
+    z-index: 1;
+    position: fixed;
+    top: 37%;
+    left: 37%;
+    min-height: 120px;
 }

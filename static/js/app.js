@@ -1,10 +1,11 @@
-new Vue({
+var app = new Vue({
     el: '#app',
     data: {
         text: '',
         codecs: ['gbk', 'big5', 'shift_jis'],
         encode: 'gbk',
-        set_decode: ''
+        set_decode: '',
+        drag_and_drop: false
     },
     computed: {
         result: function() {
@@ -15,10 +16,10 @@ new Vue({
             return result
         },
         decode: function() {
-            // convert typedarray to array
             if (!this.encodedtext) {
                 return
             }
+            // convert typedarray to array
             let arr = Array.from(this.encodedtext);
             let decode = jschardet.detect(this.array2hex(arr)).encoding;
             if (this.set_decode) { decode = this.set_decode; }
@@ -47,8 +48,27 @@ new Vue({
             return hexstr
         }
     }
-})
+});
 
-try {
-    getmdlSelect.init('.mdl-tooltip');
-} catch (error) {}
+(function() {
+    try {
+        getmdlSelect.init('.mdl-tooltip');
+    } catch (error) {}
+
+    let textfield = document.getElementById('app');
+    textfield.ondragover = function(e) {
+        e.preventDefault();
+        app.$data.drag_and_drop = true;
+    };
+    textfield.ondrop = function(e) {
+        e.preventDefault();
+        let file = e.dataTransfer.files[0];
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            app.$data.text = e.target.result;
+            document.getElementById('leftpanel').classList.add('is-dirty');
+            app.$data.drag_and_drop = false;
+        }
+        reader.readAsText(file);
+    };
+}());

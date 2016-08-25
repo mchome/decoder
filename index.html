@@ -44,12 +44,21 @@
                 </div>
             </div>
 
-            <div class="mdl-textfield mdl-js-textfield leftpanel">
+            <div class="mdl-textfield mdl-js-textfield leftpanel" id="leftpanel">
                 <textarea class="mdl-textfield__input" id="textfield" v-model="text" spellcheck="false"></textarea>
                 <label class="mdl-textfield__label" for="textfield">Type some words...</label>
             </div>
-            <div class="mdl-textfield mdl-js-textfield rightpanel">
+            <div class="mdl-textfield mdl-js-textfield rightpanel" id="rightpanel">
                 <textarea class="mdl-textfield__input" readonly>{{ result }}</textarea>
+            </div>
+
+            <div class="mdl-card mdl-shadow--2dp popup" v-if="drag_and_drop">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Drop here</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Drop the text file here, it will be autoloaded.
+                </div>
             </div>
         </main>
     </div>
@@ -58,14 +67,14 @@
     </script>
 
 
-    <script src="static/libs/mdl/material.min.js"></script>
-    <script src="static/libs/getmdl-select/getmdl-select.min.js"></script>
-    <script src="static/libs/vue/vue.min.js"></script>
-    <!--<script src="static/libs/vue/vue.js"></script>-->
-    <script src="static/libs/jschardet/jschardet.min.js"></script>
-    <script src="static/libs/text-encoding/encoding-indexes.js"></script>
-    <script src="static/libs/text-encoding/encoding.js"></script>
-    <script src="static/js/app.js"></script>
+    <script src="static/libs/mdl/material.min.js "></script>
+    <script src="static/libs/getmdl-select/getmdl-select.min.js "></script>
+    <script src="static/libs/vue/vue.min.js "></script>
+    <!--<script src="static/libs/vue/vue.js "></script>-->
+    <script src="static/libs/jschardet/jschardet.min.js "></script>
+    <script src="static/libs/text-encoding/encoding-indexes.js "></script>
+    <script src="static/libs/text-encoding/encoding.js "></script>
+    <script src="static/js/app.js "></script>
 </body>
 
 </html>
