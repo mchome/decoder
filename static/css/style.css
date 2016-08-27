@@ -31,6 +31,7 @@
     min-height: calc(100vh - 174px);
     resize: none;
     font-family: "Segoe UI", Roboto, Helvetica, "Microsoft YaHei", "mplus-1p-regular", Arial, sans-serif;
+    padding-right: 8px;
 }
 
 .rightpanel textarea {
