@@ -47,3 +47,7 @@
     left: 37%;
     min-height: 120px;
 }
+
+[v-cloak] {
+    visibility: hidden;
+}
