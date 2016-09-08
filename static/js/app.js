@@ -69,6 +69,6 @@ var app = new Vue({
             document.getElementById('leftpanel').classList.add('is-dirty');
             app.$data.drag_and_drop = false;
         }
-        reader.readAsText(file);
+        reader.readAsText(file, app.$data.encode);
     };
 }());
